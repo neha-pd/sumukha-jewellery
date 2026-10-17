@@ -18,6 +18,10 @@ function appPathname() {
   return path.replace(/\/+$/, "") || "/";
 }
 
+function assetUrl(path: string) {
+  return path.startsWith("/") ? `${appBasePath}${path}` : path;
+}
+
 function compareNewest(first: Product, second: Product) {
   const firstAdded = first.createdAt ? Date.parse(first.createdAt) : Number.NaN;
   const secondAdded = second.createdAt ? Date.parse(second.createdAt) : Number.NaN;
@@ -98,7 +102,7 @@ function WhatsAppLink({ children, message, className = "", label }: { children: 
 
 function ProductImage({ src, alt, className = "", eager = false }: { src: string; alt: string; className?: string; eager?: boolean }) {
   const [failed, setFailed] = useState(false);
-  const imageSrc = src.startsWith("/") ? `${appBasePath}${src}` : src;
+  const imageSrc = assetUrl(src);
   return (
     <div className={`image-wrap ${className}`}>
       {failed ? <div className="image-fallback" aria-label="Image unavailable"><span>SUMUKHA</span></div> : (
@@ -153,7 +157,7 @@ function Header() {
         <button className="icon-button mobile-menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>
           <Icon name={menuOpen ? "close" : "menu"} size={22} />
         </button>
-        <a href="/" className="wordmark" aria-label={`${brandName} home`}><img className="brand-avatar" src={siteContent.brandLogo} alt="" /><span className="wordmark-text"><span>{brandWord}</span><small>JEWELLERY</small></span></a>
+        <a href="/" className="wordmark" aria-label={`${brandName} home`}><img className="brand-avatar" src={assetUrl(siteContent.brandLogo)} alt="" /><span className="wordmark-text"><span>{brandWord}</span><small>JEWELLERY</small></span></a>
         <nav className={`main-nav ${menuOpen ? "nav-open" : ""}`} aria-label="Main navigation">
           {links.map(([label, href]) => <a href={href} key={label} onClick={() => setMenuOpen(false)}>{label}</a>)}
           <a href="/contact" className="mobile-contact-link">Say hello <Icon name="arrow" size={15} /></a>
@@ -265,7 +269,7 @@ function TrustStrip() {
 
 function Footer() {
   return <footer className="site-footer">
-    <div className="footer-main"><div className="footer-brand"><a href="/" className="wordmark"><img className="brand-avatar" src={siteContent.brandLogo} alt="" /><span className="wordmark-text"><span>{brandWord}</span><small>JEWELLERY</small></span></a><p>{siteContent.footerDescription}</p><a className="footer-social" href={instagramUrl} target="_blank" rel="noreferrer"><InstagramIcon size={16} /> @sumukha.in <Icon name="external" size={14} /></a></div>
+    <div className="footer-main"><div className="footer-brand"><a href="/" className="wordmark"><img className="brand-avatar" src={assetUrl(siteContent.brandLogo)} alt="" /><span className="wordmark-text"><span>{brandWord}</span><small>JEWELLERY</small></span></a><p>{siteContent.footerDescription}</p><a className="footer-social" href={instagramUrl} target="_blank" rel="noreferrer"><InstagramIcon size={16} /> @sumukha.in <Icon name="external" size={14} /></a></div>
       <div className="footer-links"><h3>Explore</h3><a href="/shop">Shop all</a><a href="/new-arrivals">New arrivals</a><a href="/bestsellers">Bestsellers</a><a href="/#collections">Collections</a>{import.meta.env.DEV && <a href="/admin">Local image admin</a>}</div>
       <div className="footer-links"><h3>The details</h3><a href="/about">Our story</a><a href="/contact">Contact</a><a href="/faq">FAQs</a><a href="/shipping-returns">Shipping &amp; returns</a><a href="/privacy">Privacy policy</a></div>
       <div className="footer-connect"><p className="eyebrow">GOOD THINGS START HERE</p><h3>Have a question?<br /><em>We’re all ears.</em></h3><WhatsAppLink className="footer-chat" message="Hi Sumukha Jewellery! I'd love to know more about your jewellery collections."><Icon name="whatsapp" size={18} /> Chat with us <Icon name="arrow" size={16} /></WhatsAppLink></div>
