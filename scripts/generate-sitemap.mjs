@@ -25,7 +25,7 @@ if (configuredUrl) {
   try {
     const url = new URL(configuredUrl);
     if (!["http:", "https:"].includes(url.protocol)) throw new Error("Use an http or https URL.");
-    origin = url.origin;
+    origin = `${url.origin}${url.pathname.replace(/\/+$/, "")}`;
   } catch (error) {
     throw new Error(`Invalid VITE_SITE_URL: ${configuredUrl}`, { cause: error });
   }

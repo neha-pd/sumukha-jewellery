@@ -11,6 +11,8 @@ npm run dev
 
 The development site includes clearly marked sample products and Unsplash imagery to demonstrate the layouts. Sample products are omitted from production builds. Do not treat the preview content as confirmed Sumukha inventory.
 
+The temporary published preview is hosted at `https://neha-pd.github.io/sumukha-jewellery/`. Until DNS is configured for the custom domain, the GitHub Pages project URL is the working public address.
+
 While the development server is running, open `/admin` (or use “Manage collection images” in the preview banner) to try different collection images. This preview tool accepts JPG, PNG, WebP, and GIF images up to 8 MB. It stores them in IndexedDB in the current browser, so they remain after a reload on this device, but are not uploaded, shared, or published. The admin page is disabled in production builds and is not an authenticated CMS.
 
 ## Configure before launch

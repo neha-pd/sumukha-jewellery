@@ -8,7 +8,15 @@ const brandWord = brandName.replace(/\s+Jewellery$/i, "").toLowerCase();
 const configuredWhatsappNumber = (import.meta.env.VITE_WHATSAPP_NUMBER ?? "").replace(/\D/g, "");
 const whatsappNumber = configuredWhatsappNumber.length >= 8 && configuredWhatsappNumber.length <= 15 ? configuredWhatsappNumber : "";
 const instagramUrl = siteContent.instagramUrl;
-const canonicalBaseUrl = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(/\/+$/, "");
+const appBasePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const canonicalBaseUrl = (import.meta.env.VITE_SITE_URL || new URL(import.meta.env.BASE_URL, window.location.origin).toString()).replace(/\/+$/, "");
+
+function appPathname() {
+  let path = decodeURIComponent(window.location.pathname);
+  if (appBasePath && path.startsWith(`${appBasePath}/`)) path = path.slice(appBasePath.length);
+  else if (path === appBasePath) path = "/";
+  return path.replace(/\/+$/, "") || "/";
+}
 
 function compareNewest(first: Product, second: Product) {
   const firstAdded = first.createdAt ? Date.parse(first.createdAt) : Number.NaN;
@@ -90,10 +98,11 @@ function WhatsAppLink({ children, message, className = "", label }: { children: 
 
 function ProductImage({ src, alt, className = "", eager = false }: { src: string; alt: string; className?: string; eager?: boolean }) {
   const [failed, setFailed] = useState(false);
+  const imageSrc = src.startsWith("/") ? `${appBasePath}${src}` : src;
   return (
     <div className={`image-wrap ${className}`}>
       {failed ? <div className="image-fallback" aria-label="Image unavailable"><span>SUMUKHA</span></div> : (
-        <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} onError={() => setFailed(true)} />
+        <img src={imageSrc} alt={alt} loading={eager ? "eager" : "lazy"} onError={() => setFailed(true)} />
       )}
     </div>
   );
@@ -135,7 +144,7 @@ function Header() {
   ];
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.location.href = `/shop${searchText.trim() ? `?q=${encodeURIComponent(searchText.trim())}` : ""}`;
+    window.location.href = `${appBasePath}/shop${searchText.trim() ? `?q=${encodeURIComponent(searchText.trim())}` : ""}`;
   }
   return (
     <>
@@ -498,7 +507,7 @@ function FloatingWhatsApp() {
 }
 
 function routePage() {
-  const path = decodeURIComponent(window.location.pathname).replace(/\/+$/, "") || "/";
+  const path = appPathname();
   if (path === "/admin" && import.meta.env.DEV) return <LocalImageAdminPage />;
   if (path === "/") return <HomePage />;
   if (path === "/shop") return <CatalogPage mode="shop" />;
@@ -523,9 +532,24 @@ function routePage() {
 }
 
 export default function App() {
-  const path = window.location.pathname;
+  const path = appPathname();
   useEffect(() => {
-    const normalizedPath = decodeURIComponent(path).replace(/\/+$/, "") || "/";
+    function routeInternalLink(event: MouseEvent) {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (!(event.target instanceof Element)) return;
+      const anchor = event.target.closest<HTMLAnchorElement>("a[href]");
+      if (!anchor || anchor.target || anchor.hasAttribute("download")) return;
+      const url = new URL(anchor.href, window.location.href);
+      if (url.origin !== window.location.origin || (url.pathname !== "/" && !url.pathname.startsWith("/"))) return;
+      if (appBasePath && (url.pathname === appBasePath || url.pathname.startsWith(`${appBasePath}/`))) return;
+      event.preventDefault();
+      window.location.assign(`${appBasePath}${url.pathname}${url.search}${url.hash}`);
+    }
+    document.addEventListener("click", routeInternalLink);
+    return () => document.removeEventListener("click", routeInternalLink);
+  }, []);
+  useEffect(() => {
+    const normalizedPath = path;
     const product = normalizedPath.startsWith("/products/")
       ? products.find((item) => item.slug === normalizedPath.split("/")[2])
       : undefined;
