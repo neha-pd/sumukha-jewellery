@@ -1,0 +1,110 @@
+{
+  "brandName": "Sumukha Jewellery",
+  "announcement": "A little something lovely, for every day",
+  "instagramUrl": "https://www.instagram.com/sumukha.in/",
+  "brandLogo": "/instagram/sumukha-profile.jpg",
+  "footerDescription": "Jewellery for the way you feel. And all the ways you show up.",
+  "hero": {
+    "eyebrow": "THE SUMUKHA EDIT",
+    "headline": "Everyday jewellery.",
+    "emphasis": "Extraordinary you.",
+    "description": "A little something that feels entirely like you. Find your next favourite piece.",
+    "image": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1500&q=90",
+    "note": "Made to make the everyday feel special"
+  },
+  "story": {
+    "eyebrow": "A LITTLE MORE YOU",
+    "headline": "Your style,",
+    "emphasis": "your signature.",
+    "description": "From the everyday pieces you reach for without thinking, to the ones that make an entrance — find something that feels like it was always yours.",
+    "image": "https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=1200&q=85"
+  },
+  "inspirationImages": [
+    {
+      "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85",
+      "alt": "An elegant jewellery detail"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85",
+      "alt": "A necklace styled for an everyday look"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85",
+      "alt": "A ring detail"
+    }
+  ],
+  "about": {
+    "eyebrow": "THE HEART OF SUMUKHA",
+    "title": "A little more you.",
+    "lead": "We believe the right piece can make an ordinary moment feel like your own.",
+    "paragraphs": [
+      "Sumukha is a place to discover jewellery that fits the way you live, dress, and feel. From easy everyday favourites to pieces with a little more presence, we’re here to help you find what feels like you.",
+      "We’re still getting our story ready to share in full. Until then, we’d love to meet you and help you find your next favourite."
+    ]
+  },
+  "instagramGallery": [],
+  "instagramReels": [
+    {
+      "url": "https://www.instagram.com/sumukha.in/reel/DelYz4IsJIH/",
+      "image": "/instagram/reels/DelYz4IsJIH.jpg",
+      "publishedAt": "October 16, 2026",
+      "alt": "Sumukha Jewellery Instagram Reel, October 16, 2026"
+    },
+    {
+      "url": "https://www.instagram.com/sumukha.in/reel/DeiwRmctj9G/",
+      "image": "/instagram/reels/DeiwRmctj9G.jpg",
+      "publishedAt": "October 15, 2026",
+      "alt": "Sumukha Jewellery Instagram Reel, October 15, 2026"
+    },
+    {
+      "url": "https://www.instagram.com/sumukha.in/reel/DegQ9uNNE5d/",
+      "image": "/instagram/reels/DegQ9uNNE5d.jpg",
+      "publishedAt": "October 14, 2026",
+      "alt": "Sumukha Jewellery Instagram Reel, October 14, 2026"
+    },
+    {
+      "url": "https://www.instagram.com/sumukha.in/reel/Dee8PrwMOz0/",
+      "image": "/instagram/reels/Dee8PrwMOz0.jpg",
+      "publishedAt": "October 13, 2026",
+      "alt": "Sumukha Jewellery Instagram Reel, October 13, 2026"
+    },
+    {
+      "url": "https://www.instagram.com/sumukha.in/reel/DebnZpJsOfN/",
+      "image": "/instagram/reels/DebnZpJsOfN.jpg",
+      "publishedAt": "October 12, 2026",
+      "alt": "Sumukha Jewellery Instagram Reel, October 12, 2026"
+    },
+    {
+      "url": "https://www.instagram.com/sumukha.in/reel/DeYZY0hKMbB/",
+      "image": "/instagram/reels/DeYZY0hKMbB.jpg",
+      "publishedAt": "October 11, 2026",
+      "alt": "Sumukha Jewellery Instagram Reel, October 11, 2026"
+    }
+  ],
+  "previewInstagramGallery": [
+    {
+      "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80",
+      "alt": "A close-up jewellery detail"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80",
+      "alt": "A sculptural jewellery detail"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80",
+      "alt": "A necklace in warm light"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80",
+      "alt": "A ring styled simply"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=700&q=80",
+      "alt": "A pair of earrings"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=80",
+      "alt": "A bracelet detail"
+    }
+  ]
+}

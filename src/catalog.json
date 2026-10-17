@@ -1,0 +1,105 @@
+{
+  "products": [],
+  "previewProducts": [
+    {
+      "id": "preview-01",
+      "slug": "luna-pearl-drops",
+      "name": "Luna Pearl Drops",
+      "category": "Earrings",
+      "description": "A considered little statement for slow mornings and late evenings.",
+      "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=85",
+      "isNew": true,
+      "featured": true,
+      "available": true,
+      "published": true,
+      "preview": true
+    },
+    {
+      "id": "preview-02",
+      "slug": "solstice-chain",
+      "name": "Solstice Chain",
+      "category": "Necklaces",
+      "description": "An effortless layer, made for wearing your own way.",
+      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
+      "featured": true,
+      "isBestseller": true,
+      "available": true,
+      "published": true,
+      "preview": true
+    },
+    {
+      "id": "preview-03",
+      "slug": "forma-sculpted-ring",
+      "name": "Forma Sculpted Ring",
+      "category": "Rings",
+      "description": "A softly sculptural accent to make a look feel like yours.",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=85",
+      "isNew": true,
+      "featured": true,
+      "available": true,
+      "published": true,
+      "preview": true
+    },
+    {
+      "id": "preview-04",
+      "slug": "daylight-hoops",
+      "name": "Daylight Hoops",
+      "category": "Earrings",
+      "description": "A familiar favourite with a fresh, modern silhouette.",
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1000&q=85",
+      "featured": true,
+      "isBestseller": true,
+      "available": true,
+      "published": true,
+      "preview": true
+    },
+    {
+      "id": "preview-05",
+      "slug": "sol-line-bracelet",
+      "name": "Sol Line Bracelet",
+      "category": "Bracelets",
+      "description": "A delicate finishing touch for everyday plans.",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1000&q=85",
+      "available": true,
+      "published": true,
+      "preview": true
+    },
+    {
+      "id": "preview-06",
+      "slug": "orbit-pendant",
+      "name": "Orbit Pendant",
+      "category": "Necklaces",
+      "description": "An easy-to-layer shape with a little room to shine.",
+      "image": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=85",
+      "available": true,
+      "published": true,
+      "preview": true
+    }
+  ],
+  "categories": [
+    {
+      "name": "Earrings",
+      "slug": "earrings",
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=85",
+      "preview": true
+    },
+    {
+      "name": "Necklaces",
+      "slug": "necklaces",
+      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85",
+      "preview": true
+    },
+    {
+      "name": "Rings",
+      "slug": "rings",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85",
+      "preview": true
+    },
+    {
+      "name": "Bracelets",
+      "slug": "bracelets",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=85",
+      "preview": true
+    }
+  ]
+}
